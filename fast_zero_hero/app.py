@@ -13,11 +13,11 @@ def read_root():
     return {'message': 'Hello world'}
 
 
-@app.get('/hello-world-html', status_code=HTTPStatus.OK) 
+@app.get('/hello-world-html', status_code=HTTPStatus.OK)
 def read_root_html():
     return HTMLResponse('<h1>Hello world</h1>')
 
 
 @app.post('/users/', status_code=HTTPStatus.CREATED)
 def create_user(user: UserSchema):
-    ...
+    return user

@@ -18,6 +18,6 @@ def read_root_html():
     return HTMLResponse('<h1>Hello world</h1>')
 
 
-@app.post('/users/', status_code=HTTPStatus.CREATED)
+@app.post('/users/', status_code=HTTPStatus.CREATED, response_model=UserSchema)
 def create_user(user: UserSchema):
     return user

@@ -13,4 +13,3 @@ class UserSchema(BaseModel):
 class UserPublic(BaseModel):
     username: str
     email: EmailStr
-    password: str

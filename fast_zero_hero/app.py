@@ -22,4 +22,5 @@ def read_root_html():
 @app.post('/users/', status_code=HTTPStatus.CREATED, response_model=UserPublic)
 def create_user(user: UserSchema):
     user_db = UserDB(**user.model_dump(), id=len(temp_database) + 1)
-    return user
+    temp_database.append(user_db)
+    return user_db

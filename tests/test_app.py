@@ -19,3 +19,9 @@ def test_read_root_html_deve_retornar_ok_e_ola_mundo_com_html_h1():
 
     assert response.status_code == HTTPStatus.OK
     assert '<h1>Hello world</h1>' in response.text
+
+
+def test_create_user():
+    client = TestClient(app)
+
+    client.post('/users/', json={'username': 'testeClient', 'password': 'password', 'email': 'test@testeClient.com'})

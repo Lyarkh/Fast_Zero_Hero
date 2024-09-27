@@ -24,7 +24,18 @@ def test_read_root_html_deve_retornar_ok_e_ola_mundo_com_html_h1():
 def test_create_user():
     client = TestClient(app)
 
-    response = client.post('/users/', json={'username': 'testeClient', 'password': 'password', 'email': 'test@testeClient.com'})
+    response = client.post(
+        '/users/',
+        json={
+            'username': 'testeClient',
+            'password': 'password',
+            'email': 'test@testeClient.com',
+        },
+    )
 
     assert response.status_code == HTTPStatus.CREATED
-    assert response.json() == {'username': 'testeClient', 'email':  'test@testeClient.com', 'id': 1}
+    assert response.json() == {
+        'username': 'testeClient',
+        'email': 'test@testeClient.com',
+        'id': 1,
+    }

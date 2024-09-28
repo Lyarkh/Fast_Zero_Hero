@@ -29,13 +29,13 @@ def test_create_user():
         json={
             'username': 'testeClient',
             'password': 'password',
-            'email': 'test@testeClient.com',
+            'email': 'test@testeclient.com',
         },
     )
 
     assert response.status_code == HTTPStatus.CREATED
     assert response.json() == {
         'username': 'testeClient',
-        'email': 'test@testeClient.com',
+        'email': 'test@testeclient.com',
         'id': 1,
     }
